@@ -14,7 +14,12 @@ const GoalInput = ({setGoals, goals}) => {
             />
             <Button
                 onPress={() => {
-                    setGoals([...goals, { id: Math.random().toString(), value: enteredGoal }]);
+                    setGoals([...goals, 
+                        { 
+                            id: Math.random().toString(),
+                            value: enteredGoal 
+                        }
+                    ]);
                 }}
                 title="Add"
             />

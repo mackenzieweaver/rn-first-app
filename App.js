@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet, FlatList } from 'react-native';
+import { View, StyleSheet, FlatList } from 'react-native';
 import GoalItem from './components/GoalItem';
 import GoalInput from './components/GoalInput';
 
@@ -13,7 +13,14 @@ export default function App() {
 			<FlatList
 				keyExtractor={item => item.id}
 				data={GOALS}
-				renderItem={item => <GoalItem item={item.item.value} />}
+				renderItem={item => 
+					<GoalItem 
+						id={item.item.id}
+						item={item.item.value} 
+						goals={GOALS}
+						setGoals={setGoals}
+					/>
+				}
 			/>
 
 		</View>
